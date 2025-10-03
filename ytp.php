@@ -125,11 +125,11 @@ function makeRequest($url) {
     "Content-Length",
     "Host",
     "Origin",
-	"Content-Security-Policy".
-	"X-Frame-Options",
-	"X-Content-Type-Options",
-	"Strict-Transport-Security",
-	"X-Xss-Protection"
+    "Content-Security-Policy",
+    "X-Frame-Options",
+    "X-Content-Type-Options",
+    "Strict-Transport-Security",
+    "X-Xss-Protection"
   ));
 
   $removedHeaders = array_map("strtolower", $removedHeaders);
