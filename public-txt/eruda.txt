@@ -1,0 +1,6 @@
+---It's a really cool developer console---
+
+-Just copy/paste that into the URL part of a bookmark and name it what ever.
+
+javascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
+

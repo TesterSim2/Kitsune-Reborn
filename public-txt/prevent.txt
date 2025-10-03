@@ -1,0 +1,6 @@
+--Prevent teachers from closing your tabs--
+
+-put this in to the URL part of a boomark then just click to use.
+
+javascript:window.onbeforeunload = function() { return true;};
+

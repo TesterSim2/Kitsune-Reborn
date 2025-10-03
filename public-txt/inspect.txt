@@ -1,0 +1,17 @@
+-=< Inspect Element Clone >=-
+
+
+A very limited way to edit elements of a site you're on if Inspect Element is blocked
+
+Setup: Create a bookmark, copy the provided code and paste it in as the URL (name it whatever you want).
+
+
+
+--Inspect On--
+
+javascript:document.body.contentEditable = 'true'; document.designMode='on'; void 0
+
+--Inspect Off-
+
+javascript:document.body.contentEditable = 'false'; document.designMode='off'; void 0
+
