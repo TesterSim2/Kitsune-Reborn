@@ -128,6 +128,37 @@ footer {
   color: #fff;
 }
 
+.btn-outline-white {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.85);
+  background-color: transparent;
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:focus,
+.btn-outline-white:active,
+.btn-outline-white.active,
+.btn-check:checked + .btn-outline-white,
+.btn-check:active + .btn-outline-white,
+.btn-outline-white.dropdown-toggle.show {
+  color: #212529;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-white:focus,
+.btn-outline-white.focus,
+.btn-check:focus + .btn-outline-white {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline-white:disabled,
+.btn-outline-white.disabled {
+  color: rgba(255, 255, 255, 0.65);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 .card-glass {
   background-color: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.1);
