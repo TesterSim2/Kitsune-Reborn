@@ -92,9 +92,15 @@ const mountProxyApp = (mountSelector) => {
 
       const getStatusClass = (variant) => {
         if (variant === 'success') {
-          return 'badge-soft-success';
+          return 'text-bg-success';
         }
-        return 'badge-soft-success';
+        if (variant === 'warning') {
+          return 'text-bg-warning';
+        }
+        if (variant === 'danger') {
+          return 'text-bg-danger';
+        }
+        return 'text-bg-secondary';
       };
 
       const clearSearch = () => {
@@ -128,30 +134,35 @@ const mountProxyApp = (mountSelector) => {
           </p>
         </div>
 
-        <div v-if="hasResults" class="hero-button-group">
-          <a
+        <div v-if="hasResults" class="row row-cols-1 row-cols-md-2 g-3">
+          <div
             v-for="proxy in filteredProxies"
             :key="proxy.name"
-            class="btn btn-outline-white btn-lg btn-status text-start"
-            :href="proxy.url"
+            class="col"
           >
-            <span class="flex-grow-1">
-              <span class="d-block fw-semibold">{{ proxy.name }}</span>
-              <span class="d-block small text-white-50">{{ proxy.description }}</span>
-            </span>
-            <span
-              v-if="proxy.status"
-              class="ms-3"
-              :class="getStatusClass(proxy.status.variant)"
+            <a
+              class="btn btn-outline-light btn-lg w-100 d-flex flex-column flex-sm-row align-items-start justify-content-between gap-3 text-start proxy-btn"
+              :href="proxy.url"
             >
-              {{ proxy.status.text }}
-            </span>
-          </a>
+              <span class="flex-grow-1">
+                <span class="d-block fw-semibold">{{ proxy.name }}</span>
+                <span class="d-block small">{{ proxy.description }}</span>
+              </span>
+              <span v-if="proxy.status" class="small">
+                <span
+                  class="badge rounded-pill"
+                  :class="getStatusClass(proxy.status.variant)"
+                >
+                  {{ proxy.status.text }}
+                </span>
+              </span>
+            </a>
+          </div>
         </div>
 
         <div v-else class="text-center py-5">
           <p class="lead mb-3">No proxies match that search just yet.</p>
-          <button class="btn btn-outline-white btn-lg" type="button" @click="clearSearch">
+          <button class="btn btn-outline-light btn-lg" type="button" @click="clearSearch">
             Clear search
           </button>
         </div>
