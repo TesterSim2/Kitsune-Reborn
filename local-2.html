@@ -33,9 +33,9 @@
           <h3>Local PHP-Proxy</h3>
         </center>
         <center>
-						<form action="index.php" method="post" style="transform:scale(1.1)">
-							<p>
-								<input name=url type="text" placeholder="Enter URL" style="border:none;border-radius: 5px;padding:10px;"/>&nbsp;
+                                                <form id="web-search-box" action="index.php" method="post" style="transform:scale(1.1)">
+                                                        <p>
+                                                                <input id="url" name=url type="text" placeholder="Enter URL" style="border:none;border-radius: 5px;padding:10px;"/>&nbsp;
 								<input type="submit" style="border:none;border-radius: 5px;padding:10px;width:40px;background:#704ea0;color:#fff;font-weight:bold;" value="GO" />
 							</p>
 						</form>
@@ -52,14 +52,20 @@
         function $(id) {
           return document.getElementById(id);
         }
-        $('web-search-box').onsubmit = function() {
-          var url = $('url').value;
-          //this is the URL for the server
-          window.location.href = `cd182/index.php?cdURL=${url}`;
-          return false;
-        };
+        var form = $('web-search-box');
+        if (form) {
+          form.addEventListener('submit', function() {
+            var urlInput = $('url');
+            if (urlInput) {
+              urlInput.value = urlInput.value.trim();
+            }
+          });
+        }
         window.onload = function() {
-          $('url').focus();
+          var urlInput = $('url');
+          if (urlInput) {
+            urlInput.focus();
+          }
         }
       </script>
     </div>
