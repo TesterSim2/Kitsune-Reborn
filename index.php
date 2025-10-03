@@ -47,10 +47,14 @@ session_write_close();
 
 // form submit in progress...
 if(isset($_POST['url'])){
-	
-	$url = $_POST['url'];
-	$url = add_http($url);
-	
+
+	$url = add_http(trim($_POST['url']));
+
+	if (!filter_var($url, FILTER_VALIDATE_URL)) {
+		http_response_code(400);
+		exit('Invalid URL provided.');
+	}
+
 	header("HTTP/1.1 302 Found");
 	header('Location: '.proxify_url($url));
 	exit;
