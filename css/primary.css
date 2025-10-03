@@ -87,29 +87,30 @@ footer {
 
 .hero-section {
   position: relative;
-  padding: 7rem 0 4rem;
+  padding: var(--hero-section-padding-y, 7rem) 0 4rem;
 }
 
 @media (min-width: 768px) {
   .hero-section {
-    padding: 8.5rem 0 6rem;
+    padding: var(--hero-section-padding-y-lg, 8.5rem) 0 6rem;
   }
 }
 
-.hero-section .section-heading {
+.section-heading {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.45);
 }
 
-.hero-section .section-subheading {
+.section-subheading {
   font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 600;
   margin-bottom: 1.5rem;
   text-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.35);
 }
 
-.hero-section .lead {
+.hero-section .lead,
+.hero-lead {
   font-weight: 400;
   line-height: 1.7;
   max-width: 46rem;
