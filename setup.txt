@@ -1,34 +1,58 @@
 <?php
 
-function generate_random_key(){
+$force = in_array('--force', $argv, true);
+$pathConfig = __DIR__ . '/config.php';
 
-	if(function_exists('openssl_random_pseudo_bytes')){
-		$random = openssl_random_pseudo_bytes(100);
-	} else {
-		$random = rand().microtime().rand();
-	}
-	
-	return md5($random);
+if (!is_readable($pathConfig)) {
+    fwrite(STDERR, "[Error] Unable to read config.php at {$pathConfig}.\n");
+    exit(1);
 }
 
-$path_config = './config.php';
-
-// config.php won't be writable if ran from within web server
-if(!is_writable($path_config)){
-	exit;
+if (!is_writable($pathConfig)) {
+    fwrite(STDERR, "[Error] config.php is not writable. Please adjust permissions and try again.\n");
+    exit(1);
 }
 
-$key = generate_random_key();
+$configContents = file_get_contents($pathConfig);
+if ($configContents === false) {
+    fwrite(STDERR, "[Error] Failed to load config.php contents.\n");
+    exit(1);
+}
 
-// open config.php
-$config = file_get_contents($path_config);
+if (!preg_match("/\$config\\['app_key'\\]\s*=\s*'([^']*)';/", $configContents, $matches)) {
+    fwrite(STDERR, "[Error] Unable to locate app_key entry in config.php.\n");
+    exit(1);
+}
 
-// replace blank app_key with new generated key
-$config = str_replace('$config[\'app_key\'] = \'\';', '$config[\'app_key\'] = \''.$key.'\';', $config);
+$currentKey = $matches[1];
+if ($currentKey !== '' && !$force) {
+    echo "[Info] Existing app_key detected. Use --force to overwrite.\n";
+    exit(0);
+}
 
-// write to config.php
-file_put_contents($path_config, $config);
+try {
+    $newKey = bin2hex(random_bytes(16));
+} catch (Exception $exception) {
+    fwrite(STDERR, "[Error] Failed to generate a secure key: " . $exception->getMessage() . "\n");
+    exit(1);
+}
 
-echo "New Key: {$key}\r\n";
+$updatedConfig = preg_replace(
+    "/(\$config\\['app_key'\\]\s*=\s*)'[^']*';/",
+    "\\1'{$newKey}';",
+    $configContents,
+    1
+);
 
-?>
+if ($updatedConfig === null) {
+    fwrite(STDERR, "[Error] Failed to update config.php contents.\n");
+    exit(1);
+}
+
+if (file_put_contents($pathConfig, $updatedConfig) === false) {
+    fwrite(STDERR, "[Error] Unable to write updated configuration to config.php.\n");
+    exit(1);
+}
+
+echo "[Success] Generated new app_key: {$newKey}\n";
+exit(0);
