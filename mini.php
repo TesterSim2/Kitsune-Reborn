@@ -37,12 +37,12 @@ $landingExampleURL = "https://old.reddit.com";
 /****************************** END CONFIGURATION ******************************/
 
 //Fix https and heroku
-if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
   $_SERVER['HTTPS']='on';
   $_SERVER["SERVER_PORT"]=443;
 }
 
-if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'http') {
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'http') {
   $_SERVER["SERVER_PORT"]=80;
 }
 
