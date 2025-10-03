@@ -1,54 +1,67 @@
+<!DOCTYPE html>
 <html class="full-height" lang="en-US">
   <head>
-    <title>Google Drive</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GoldenNetwork</title>
     <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="css/primary.css" rel="stylesheet">
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-
   </head>
-  <body id="top">
-    <script>new WOW().init();</script>
-    <!-- Navbar-->
-    <nav class="navbar white-text navbar-expand-lg navbar-dark fixed-top" id="navbar">
-      <div class="container"><a class="navbar-brand" href="index.html"><strong>GoldenNetwork</strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><strong>GoldenNetwork</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link waves-effect waves-light" href="games.html">Games</a></li>
-            <li class="nav-item"><a class="nav-link waves-effect waves-light" href="contributors.html">Staff & Contributors</a></li></ul>
-          <a class="btn btn-primary btn-rounded my-0 waves-effect waves-light" href="https://github.com/titaniumnetwork-dev" target="_blank">Check us out on Github!</a>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="selection3.html">Games</a></li>
+            <li class="nav-item"><a class="nav-link" href="contributors.html">Staff &amp; Contributors</a></li>
+          </ul>
+          <a class="btn btn-primary ms-lg-3 mt-3 mt-lg-0" href="https://github.com/titaniumnetwork-dev" target="_blank" rel="noreferrer noopener">Check us out on GitHub!</a>
         </div>
       </div>
     </nav>
-    <!-- Intro Section-->
-    <header>
-      <section class="view hm-gradient intro">
-        <div class="full-bg-img d-flex align-items-center">
-          <div class="container">
-            <div class="row">
-              <div class="wow fadeInLeft white-text" style="visibility: visible; animation-name: fadeInLeft;">
-                <h2 class="h2-responsive font-bold mt-sm-2">GoldenNetwork</h2>
-                   <h3 class="h3-responsive font-bold mt-sm-3">MOTD of 10/03/19 - Remember to check out our Github! The entire site's available to download so you can make your own Titanium site!</h3>
-                <div class="h6">With TitaniumNetwork's services, you can browse the internet freely without restriction and you do not have to worry about your school/work/company being able to see your activities!</div>
-                <div class="h6">With absolutely no user data being stored on our end & our use of 128-bit SSL and TLS, your communications are completely secure!</div>
-                <div class="h6">Use the navigation below to select your destination!</div>
-              </div>
-              <div class="wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                    <a class="btn btn-outline-white waves-effect waves-light" href="selection.html">Surf Freely</a>
-                    <a class="btn btn-outline-white waves-effect waves-light" href="bookmarklets.html">Bookmarklets</a>
-                    <a class="btn btn-outline-white waves-effect waves-light" href="https://donorbox.org/titaniumnetwork">Support TitaniumNetwork</a>
-                    <a class="btn btn-outline-white waves-effect waves-light" href="forum.html">Community Forum</a>
-                    <a class="btn btn-outline-white waves-effect waves-light" href="talk.html">Use our Chatbox</a>
+
+    <main>
+      <section class="hero-section d-flex align-items-center">
+        <div class="container">
+          <div class="row align-items-center gy-5">
+            <div class="col-12 col-lg-6">
+              <h1 class="section-heading">GoldenNetwork</h1>
+              <h2 class="section-subheading">Browse the web without limitations.</h2>
+              <p class="lead mb-4">With TitaniumNetwork's services, you can browse the internet freely without restriction and you do not have to worry about your school, workplace, or company being able to see your activities. We do not store user data &mdash; paired with 128-bit SSL and TLS, your communications stay private.</p>
+              <p class="lead">Use the navigation below to select your destination.</p>
+            </div>
+            <div class="col-12 col-lg-6">
+              <div class="hero-button-group">
+                <a class="btn btn-outline-white btn-lg" href="selection.html">Surf Freely</a>
+                <a class="btn btn-outline-white btn-lg" href="bookmarklets.html">Bookmarklets</a>
+                <a class="btn btn-outline-white btn-lg" href="https://donorbox.org/titaniumnetwork" target="_blank" rel="noreferrer noopener">Support TitaniumNetwork</a>
+                <a class="btn btn-outline-white btn-lg" href="forum.html">Community Forum</a>
+                <a class="btn btn-outline-white btn-lg" href="talk.html">Use our Chatbox</a>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </header>
+    </main>
+
+    <footer class="footer text-center py-4">
+      <div class="container small">&copy; <span id="currentYear"></span> GoldenNetwork. All rights reserved.</div>
+    </footer>
+
+    <script>
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha384-3gJwYpZj0hISBkV2YIfJfnLyC3xaQa58ae0q/QAdzTZziEtGlUZt6I4v9ZR6N9F2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/site.js"></script>
+    <script src="js/main.js"></script>
   </body>
-  <script>new WOW().init();</script>
 </html>
