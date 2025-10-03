@@ -116,51 +116,6 @@ footer {
   max-width: 46rem;
 }
 
-.hero-button-group {
-  display: grid;
-  gap: 1rem;
-}
-
-.hero-button-group > .btn {
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-  .hero-button-group {
-    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  }
-}
-
-.btn-status {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.badge-soft-success {
-  background-color: rgba(25, 135, 84, 0.2);
-  color: #d1f7df;
-  border: 1px solid rgba(25, 135, 84, 0.45);
-  border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.btn-outline-white {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.7);
-}
-
-.btn-outline-white:hover,
-.btn-outline-white:focus {
-  color: #212529;
-  background-color: #fff;
-  border-color: #fff;
-}
-
 .btn-soft-dark {
   background-color: rgba(0, 0, 0, 0.35);
   color: #fff;
@@ -197,6 +152,16 @@ footer {
 
 .content-card ul {
   padding-left: 1.25rem;
+}
+
+.proxy-btn .small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.proxy-btn .badge {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .content-card li + li {
