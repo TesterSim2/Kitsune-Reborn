@@ -41,35 +41,7 @@
               <p class="lead mb-0"><a class="link-light fw-semibold" href="public-txt/tos.txt">View the Terms of Service</a> you agree to by using GoldenNetwork.</p>
             </div>
             <div class="col-12 col-lg-6">
-              <div class="hero-button-group">
-                <a class="btn btn-outline-white btn-lg btn-status" href="selection4.html">
-                  Page Request
-                </a>
-                <a class="btn btn-outline-white btn-lg btn-status" href="mini.php">
-                  Local Proxy V2
-                  <span class="badge-soft-success">Running</span>
-                </a>
-                <a class="btn btn-outline-white btn-lg btn-status" href="local.html">
-                  CensorDodge
-                  <span class="badge-soft-success">Running</span>
-                </a>
-                <a class="btn btn-outline-white btn-lg btn-status" href="local-2.html">
-                  Local PHP-Proxy
-                  <span class="badge-soft-success">Running</span>
-                </a>
-                <a class="btn btn-outline-white btn-lg btn-status" href="youtube.html">
-                  Local YouTube Proxy
-                  <span class="badge-soft-success">Running</span>
-                </a>
-                <a class="btn btn-outline-white btn-lg btn-status" href="externalserver1.html">
-                  External Server #1: Muun
-                  <span class="badge-soft-success">Running</span>
-                </a>
-                <a class="btn btn-outline-white btn-lg btn-status" href="externalserver2.html">
-                  External Server #2: Node Unblocker
-                  <span class="badge-soft-success">Running</span>
-                </a>
-              </div>
+              <div id="proxy-app"></div>
             </div>
           </div>
         </div>
@@ -80,9 +52,8 @@
       <div class="container small">&copy; <span id="currentYear"></span> GoldenNetwork. All rights reserved.</div>
     </footer>
 
-    <script>
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    <script type="module" src="js/year.js"></script>
+    <script type="module" src="js/proxyApp.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha384-3gJwYpZj0hISBkV2YIfJfnLyC3xaQa58ae0q/QAdzTZziEtGlUZt6I4v9ZR6N9F2" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/site.js"></script>
